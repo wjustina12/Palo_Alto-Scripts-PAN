@@ -6,7 +6,7 @@ from rich import print as rprint
 
 username = os.getenv('USERNAME')
 password = os.getenv('PASSWORD')
-ip_firewall = {ip}
+ip_firewall = {ip} #This can be a single firewall or multiple firewalls contained within a list
 
 def get_int_management(uri, username, password):
     management_int = requests.get(uri, auth=(username,password), verify=False)
