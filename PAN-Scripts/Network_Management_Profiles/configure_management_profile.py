@@ -6,7 +6,7 @@ from rich import print as rprint
 
 username = os.getenv('USERNAME')
 password = os.getenv('PASSWORD')
-ip_firewall = {ip} #This can be a single firewall or multiple firewalls contained within a list
+ip_firewall = "192.168.1.4" #This can be a single firewall or multiple firewalls contained within a list
 
 def get_int_management(uri, username, password):
     management_int = requests.get(uri, auth=(username,password), verify=False)
@@ -15,14 +15,12 @@ def get_int_management(uri, username, password):
 
 def true_convert(string):
     bool_value = bool(string)
-    string = bool_value
-    return string
+    return bool_value
 
 def false_convert(string):
     string = ""
     bool_value = bool(string)
-    string = bool_value
-    return string
+    return bool_value
 
 def create_interface_management(firewall_ip, username, password):
     firewall = Firewall(ip_firewall, api_username=username, api_password=password) 
@@ -72,5 +70,5 @@ def create_interface_management(firewall_ip, username, password):
         print(f"{named_interface} already exists")
     
     
-
+create_interface_management(ip_firewall, username, password)
     
